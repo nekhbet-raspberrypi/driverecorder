@@ -5,7 +5,6 @@ import time
 import pigpio
 
 class NeoPixel:
-
     # コンストラクタ
     def __init__(self, pi):
         self.pi = pi
@@ -27,11 +26,9 @@ class NeoPixel:
         self.pi.spi_write(self.h, buf)
         time.sleep(10e-5)
 
-# メインスレッド
+# メイン
 if __name__ == '__main__':
-
     pi = pigpio.pi()
-
     if not pi.connected:
         exit()
 
@@ -39,7 +36,6 @@ if __name__ == '__main__':
 
     # RGB test
     pixels.set_color(0x00000F)
-
     try:
         while True:
             time.sleep(1)
